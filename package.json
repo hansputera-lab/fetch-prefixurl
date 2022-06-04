@@ -1,0 +1,28 @@
+{
+	"name": "fetch-prefixurl",
+	"version": "0.0.1",
+	"description": "Use \"fetch\" with prefix url",
+	"main": "index.cjs",
+	"module": "index.js",
+	"scripts": {
+		"lint": "eslint \"**/*.{js,cjs}\" --fix",
+		"format": "prettier . --write",
+		"build": "rollup -c"
+	},
+	"keywords": [
+		"fetch-baseurl",
+		"fetch-client"
+	],
+	"author": "Hanif Dwy Putra S <hanifdwyputrasembiring@gmail.com>",
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.x"
+	},
+	"devDependencies": {
+		"eslint": "^8.17.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-config-prettier": "^8.5.0",
+		"prettier": "^2.6.2",
+		"rollup": "^2.75.5"
+	}
+}
