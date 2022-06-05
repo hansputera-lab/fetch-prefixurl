@@ -73,6 +73,12 @@ class FetchPrefixUrl {
 		if (!/^(get|p(os|u)t|delete|options|head)$/gi.test(method))
 			throw new TypeError('Invalid HTTP Method');
 		method = method.toUpperCase();
+		input = input || {};
+		input.headers = {
+			'User-Agent': 'FetchPrefixUrl/1.0',
+			...input.headers,
+			'Access-Control-Allow-Origin': '*',
+		};
 		try {
 			return await fetch(resolveUrl(url, this.baseUrl, false).href, {
 				method,

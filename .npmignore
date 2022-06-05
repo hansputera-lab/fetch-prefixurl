@@ -1,0 +1,7 @@
+.prettierrc.json
+.prettierignore
+.eslintrc.js
+rollup.config.js
+index.browser.js
+pnpm-lock.yaml
+.gitignore

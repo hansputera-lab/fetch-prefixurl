@@ -4,6 +4,7 @@
 	"description": "Use \"fetch\" with base url",
 	"main": "index.cjs",
 	"module": "index.js",
+	"typings": "index.d.ts",
 	"scripts": {
 		"lint": "eslint \"**/*.{js,cjs}\" --fix",
 		"format": "prettier . --write",

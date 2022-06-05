@@ -45,8 +45,7 @@ var FetchPrefix = (function (exports) {
 			validateUrl(baseUrl)
 		) {
 			baseUrl = new URL(baseUrl);
-			if (baseUrl.hostname === 'localhost')
-				baseUrl.hostname = '127.0.0.1';
+			if (baseUrl.hostname === 'localhost') baseUrl.hostname = '127.0.0.1';
 			return new URL(url, baseUrl.href);
 		} else {
 			if (!validateUrl(url)) throw new TypeError('Invalid URL');
@@ -77,6 +76,12 @@ var FetchPrefix = (function (exports) {
 			if (!/^(get|p(os|u)t|delete|options|head)$/gi.test(method))
 				throw new TypeError('Invalid HTTP Method');
 			method = method.toUpperCase();
+			input = input || {};
+			input.headers = {
+				'User-Agent': 'FetchPrefixUrl/1.0',
+				...input.headers,
+				'Access-Control-Allow-Origin': '*',
+			};
 			try {
 				return await fetch(resolveUrl(url, this.baseUrl, false).href, {
 					method,
@@ -170,4 +175,5 @@ var FetchPrefix = (function (exports) {
 	Object.defineProperty(exports, '__esModule', { value: true });
 
 	return exports;
+
 })({});
