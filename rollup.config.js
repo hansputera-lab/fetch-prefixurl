@@ -18,4 +18,6 @@ export default defineConfig({
 			name: 'FetchPrefix',
 		},
 	],
+	perf: true,
+	strictDeprecations: true,
 });
