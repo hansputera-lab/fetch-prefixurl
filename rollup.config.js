@@ -16,6 +16,11 @@ export default defineConfig({
 			file: './index.browser.js',
 			format: 'iife',
 			name: 'FetchPrefix',
+			generatedCode: {
+				'arrowFunctions': true,
+				'constBindings': true,
+				'reservedNamesAsProps': true,
+			}
 		},
 	],
 	perf: true,

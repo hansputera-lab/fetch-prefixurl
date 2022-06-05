@@ -1,4 +1,4 @@
-var FetchPrefix = (function (exports) {
+const FetchPrefix = (function (exports) {
 	'use strict';
 
 	/** @typedef {import('./index').HTTPMethods} HTTPMethods */
