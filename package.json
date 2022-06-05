@@ -1,7 +1,7 @@
 {
-	"name": "fetch-prefixurl",
+	"name": "fetch-baseurl",
 	"version": "0.0.1",
-	"description": "Use \"fetch\" with prefix url",
+	"description": "Use \"fetch\" with base url",
 	"main": "index.cjs",
 	"module": "index.js",
 	"scripts": {

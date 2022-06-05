@@ -17,6 +17,7 @@ function validateUrl(url) {
 	try {
 		return !!new URL(url);
 	} catch {
+		console.log(url, 'dsasd');
 		return false;
 	}
 }
@@ -44,7 +45,9 @@ function resolveUrl(url, baseUrl, forceHost) {
 			baseUrl instanceof URL) &&
 		validateUrl(baseUrl)
 	) {
-		return new URL(url, baseUrl instanceof URL ? baseUrl.origin : baseUrl);
+		baseUrl = new URL(baseUrl);
+		if (baseUrl.hostname === 'localhost') baseUrl.hostname = '127.0.0.1';
+		return new URL(url, baseUrl.href);
 	} else {
 		if (!validateUrl(url)) throw new TypeError('Invalid URL');
 		else return new URL(url);
@@ -70,15 +73,18 @@ class FetchPrefixUrl {
 	 * @param {RequestInit} input Request input data.
 	 * @return {Promise<Response>}
 	 */
-	request(url, method = 'GET', input) {
+	async request(url, method = 'GET', input) {
 		if (!/^(get|p(os|u)t|delete|options|head)$/gi.test(method))
 			throw new TypeError('Invalid HTTP Method');
 		method = method.toUpperCase();
-		return fetch({
-			url: resolveUrl(url, this.baseUrl, false).href,
-			method,
-			...input,
-		});
+		try {
+			return await fetch(resolveUrl(url, this.baseUrl, false).href, {
+				method,
+				...input,
+			});
+		} catch (err) {
+			return { error: err.message };
+		}
 	}
 
 	/**
