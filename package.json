@@ -1,6 +1,6 @@
 {
 	"name": "fetch-baseurl",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Use \"fetch\" with base url",
 	"main": "index.cjs",
 	"module": "index.js",
@@ -25,5 +25,9 @@
 		"eslint-config-prettier": "^8.5.0",
 		"prettier": "^2.6.2",
 		"rollup": "^2.75.5"
-	}
+	},
+	"repository": {
+		"url": "https://github.com/hansputera-lab/fetch-prefixurl.git"
+	},
+	"readme": "https://github.com/hansputera-lab/fetch-prefixurl/blob/main/README.md"
 }

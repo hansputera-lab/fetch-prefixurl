@@ -16,7 +16,6 @@ const FetchPrefix = (function (exports) {
 		try {
 			return !!new URL(url);
 		} catch {
-			console.log(url, 'dsasd');
 			return false;
 		}
 	}

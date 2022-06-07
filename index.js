@@ -13,7 +13,6 @@ function validateUrl(url) {
 	try {
 		return !!new URL(url);
 	} catch {
-		console.log(url, 'dsasd');
 		return false;
 	}
 }
